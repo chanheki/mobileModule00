@@ -17,7 +17,7 @@ struct ContentView: View {
                 Text("A Simple Text!")
                     .padding()
                 Button("Click Me", role: .none) {
-                    self.buttonClickEvent()
+                    buttonClickEvent()
                 }
                 Spacer()
             }

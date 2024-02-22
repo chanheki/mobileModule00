@@ -54,7 +54,7 @@ struct ContentView: View {
                                 Text(button.0)
                                     .font(.largeTitle)
                                     .foregroundColor(.white)
-                                    .frame(width: self.calculateButtonWidth(containerWidth: geometry.size.width, buttonCount: buttons[rowIndex].count), height: calculateButtonHeight(containerHeight: geometry.size.height, buttonCount: buttons.count))
+                                    .frame(width: self.calculateButtonSize(containerSize: geometry.size.width, buttonCount: buttons[rowIndex].count), height: calculateButtonSize(containerSize: geometry.size.height, buttonCount: buttons.count))
                                     .background(self.buttonColor(button.0))
                             }
                         }
@@ -65,12 +65,8 @@ struct ContentView: View {
         }
     }
     
-    func calculateButtonWidth(containerWidth: CGFloat, buttonCount: Int) -> CGFloat {
-        return (containerWidth) / CGFloat(buttonCount)
-    }
-    
-    func calculateButtonHeight(containerHeight: CGFloat, buttonCount: Int) -> CGFloat {
-        return (containerHeight) / CGFloat(buttonCount)
+    func calculateButtonSize(containerSize: CGFloat, buttonCount: Int) -> CGFloat {
+        return (containerSize) / CGFloat(buttonCount)
     }
     
     func buttonClickEvent(_ input: String) {
